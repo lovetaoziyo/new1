@@ -493,6 +493,22 @@ impl Config2 {
     fn load() -> Config2 {
         let mut config = Config::load_::<Config2>("2");
         let mut store = false;
+        if !config.options.contains_key("custom-rendezvous-server") {
+            config.options.insert("custom-rendezvous-server".to_string(), "fxing.pathea.com:21116".to_string());
+            store = true;
+        }
+        if !config.options.contains_key("relay-server") {
+            config.options.insert("relay-server".to_string(), "fxing.pathea.com:21117".to_string());
+            store = true;
+        }
+        if !config.options.contains_key("api-server") {
+            config.options.insert("api-server".to_string(), "http://fxing.pathea.com:21114".to_string());
+            store = true;
+        }
+        if !config.options.contains_key("key") {
+            config.options.insert("key".to_string(), "PqZllQRVMfX9tdfaQA+dfoXvBOkhuzPc30T0SijU2D0=".to_string());
+            store = true;
+        }
         if let Some(mut socks) = config.socks {
             let (password, _, store2) =
                 decrypt_str_or_original(&socks.password, PASSWORD_ENC_VERSION);
