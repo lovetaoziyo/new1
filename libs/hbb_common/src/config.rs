@@ -117,7 +117,7 @@ const CHARS: &[char] = &[
     'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &["fxing.pathea.com"];
+pub const RENDEZVOUS_SERVERS: &[&str] = &["fxing.patheagames.com"];
 pub const RS_PUB_KEY: &str = "PqZllQRVMfX9tdfaQA+dfoXvBOkhuzPc30T0SijU2D0=";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
@@ -494,15 +494,15 @@ impl Config2 {
         let mut config = Config::load_::<Config2>("2");
         let mut store = false;
         if !config.options.contains_key("custom-rendezvous-server") {
-            config.options.insert("custom-rendezvous-server".to_string(), "fxing.pathea.com:21116".to_string());
+            config.options.insert("custom-rendezvous-server".to_string(), "fxing.patheagames.com:21116".to_string());
             store = true;
         }
         if !config.options.contains_key("relay-server") {
-            config.options.insert("relay-server".to_string(), "fxing.pathea.com:21117".to_string());
+            config.options.insert("relay-server".to_string(), "fxing.patheagames.com:21117".to_string());
             store = true;
         }
         if !config.options.contains_key("api-server") {
-            config.options.insert("api-server".to_string(), "http://fxing.pathea.com:21114".to_string());
+            config.options.insert("api-server".to_string(), "http://fxing.patheagames.com:21114".to_string());
             store = true;
         }
         if !config.options.contains_key("key") {
@@ -2166,15 +2166,15 @@ impl LocalConfig {
             store = true;
         }
         if !config.options.contains_key("custom-rendezvous-server") {
-            config.options.insert("custom-rendezvous-server".to_string(), "fxing.pathea.com:21116".to_string());
+            config.options.insert("custom-rendezvous-server".to_string(), "fxing.patheagames.com:21116".to_string());
             store = true;
         }
         if !config.options.contains_key("relay-server") {
-            config.options.insert("relay-server".to_string(), "fxing.pathea.com:21117".to_string());
+            config.options.insert("relay-server".to_string(), "fxing.patheagames.com:21117".to_string());
             store = true;
         }
         if !config.options.contains_key("api-server") {
-            config.options.insert("api-server".to_string(), "http://fxing.pathea.com:21114".to_string());
+            config.options.insert("api-server".to_string(), "http://fxing.patheagames.com:21114".to_string());
             store = true;
         }
         if !config.options.contains_key("key") {
